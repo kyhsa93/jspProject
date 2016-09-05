@@ -27,6 +27,7 @@ create table districtTable
 	villageName		varchar2(20)	not null,
 	bankAccount		varchar2(20)	not null,
 	introduction	varchar2(1000)	not null,
+	fileName		varchar2(50)	not null,
 	approve			varchar2(10)	not null
 )
 insert into districtTable values('좋은집', 'kyh', '영훈쓰', '010-5432-9877', '열두시','등촌3동','00000','굳','승인')

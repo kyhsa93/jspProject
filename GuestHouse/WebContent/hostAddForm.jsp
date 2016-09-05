@@ -68,46 +68,52 @@
 </head>
 <body>
 
-<form action="addHost.district" class="form-horizontal">	
+<form action="addHost.district" class="form-horizontal" method="post"enctype="multipart/form-data">	
 	<fieldset>
 	    <legend>호스팅 정보 입력</legend>
 	    <div class="form-group">
-      		<label for="inputEmail" class="col-lg-2 control-label">호스팅 제목</label>
+      		<label class="col-lg-2 control-label">호스팅 제목</label>
       		<div class="col-lg-10">
         		<input type="text" class="form-control" style = "width:400px" name="hostingTitle" placeholder="hosting title">
       		</div>
     	</div>
 	    <div class="form-group">
-      		<label for="inputEmail" class="col-lg-2 control-label">호스트 이름</label>
+      		<label class="col-lg-2 control-label">호스트 이름</label>
       		<div class="col-lg-10">
         		<input type="text" class="form-control" style = "width:400px" name="hostName" placeholder="host name">
       		</div>
     	</div>
 	    <div class="form-group">
-      		<label for="inputEmail" class="col-lg-2 control-label">호스트 연락처</label>
+      		<label class="col-lg-2 control-label">호스트 연락처</label>
       		<div class="col-lg-10">
         		<input type="text" class="form-control" style = "width:400px" name="hostPhone" placeholder="예약 등 문의 가능한 연락처">
       		</div>
     	</div>
 		<div class="form-group">
-      		<label for="inputEmail" class="col-lg-2 control-label">숙소 주소</label>
+      		<label class="col-lg-2 control-label">숙소 주소</label>
       		<div class="col-lg-10">
         		<input type="text" class="form-control" style = "width:400px" name="villageName" placeholder="~동 입력 (예:등촌3동)">
         		<input type="text" class="form-control" style = "width:400px" name="houseAddress" placeholder="전체 주소입력">
       		</div>
     	</div>
     	<div class="form-group">
-      		<label for="inputEmail" class="col-lg-2 control-label">은행 및 계좌번호</label>
+      		<label class="col-lg-2 control-label">은행 및 계좌번호</label>
       		<div class="col-lg-10">
         		<input type="text" class="form-control" style = "width:400px" name="bankAccount" placeholder="예 : 국민(000000-00-000000)">
       		</div>
     	</div>
     	<div class="form-group">
-      		<label for="textArea" class="col-lg-2 control-label">숙소 소개</label>
+      		<label class="col-lg-2 control-label">숙소 소개</label>
       		<div class="col-lg-10">
         		<textarea class="form-control" id="textArea" style="height:400px;width:400px;" name="introduction">특별한 행사를 진행한다거나 식사제공 여부, 시설, 규칙 등 숙소에 대한 상세한 설명과 소개를 작성해 주세요</textarea>
         		<span class="help-block">허위 정보를 기재할 시 게시물이 승인되지 않을 수 있습니다.</span>
 	      	</div>
+	    </div>
+	    <div class="form-group">
+	    	<label class="col-lg-2 control-label">숙소사진</label>
+	    	<div class="col-lg-10">
+	    		<input type="file" name="file">
+	    	</div>
 	    </div>
 	    <div class="form-group">
       		<div class="col-lg-10 col-lg-offset-2">

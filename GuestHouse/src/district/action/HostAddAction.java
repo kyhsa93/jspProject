@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 import action.Action;
 import district.DAO.DistrictDAO;
 import district.DTO.DistrictDTO;
@@ -19,15 +22,22 @@ public class HostAddAction implements Action {
 			throws SQLException, ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
 		//1.요청파라미터 처리
+		request.setCharacterEncoding("UTF-8");
+		String filePath = request.getServletContext().getRealPath("upload");
+		System.out.println(filePath);
+		MultipartRequest multi = 
+				new MultipartRequest(request, filePath, 1024*1024*100, 
+						"UTF-8", new DefaultFileRenamePolicy());
 		HttpSession session = request.getSession();
 		String hostId = (String)session.getAttribute("id");
-		String hostingTitle = request.getParameter("hostingTitle");
-		String hostName = request.getParameter("hostName");
-		String hostPhone = request.getParameter("hostPhone");
-		String villageName = request.getParameter("villageName");
-		String houseAddress = request.getParameter("houseAddress");
-		String bankAccount = request.getParameter("bankAccount");
-		String introduction = request.getParameter("introduction");
+		String hostingTitle = multi.getParameter("hostingTitle");
+		String hostName = multi.getParameter("hostName");
+		String hostPhone = multi.getParameter("hostPhone");
+		String villageName = multi.getParameter("villageName");
+		String houseAddress = multi.getParameter("houseAddress");
+		String bankAccount = multi.getParameter("bankAccount");
+		String introduction = multi.getParameter("introduction");
+		String fileName = multi.getFilesystemName("file");
 		
 		//2.DB사용
 		DistrictDAO dao = new DistrictDAO();
@@ -40,6 +50,7 @@ public class HostAddAction implements Action {
 		dto.setHouseAddress(houseAddress);
 		dto.setBankAccount(bankAccount);
 		dto.setIntroduction(introduction);
+		dto.setFileName(fileName);
 		
 		//3.페이지 이동 처리
 		PageMoveAction pageMoveAction = new PageMoveAction();

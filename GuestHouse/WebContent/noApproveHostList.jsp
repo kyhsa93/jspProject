@@ -77,6 +77,7 @@
 		<thead>
 			<tr>
 				<th>번호</th>
+				<th></th>
 				<th>제목</th>
 				<th>주소</th>
 			</tr>
@@ -88,7 +89,10 @@
 	<tbody>
 		<tr>
 			<th><%=i+1%></th>
+			<%-- <td><img alt="" width="50" height="50"src="/upload/<%=dto.getFileName() %>"></td> --%>
+			<td><img alt="" width="50" height="50" src="C:\Users\북9라이트\Desktop\이클립스 네온\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\GuestHouse\upload\<%=dto.getFileName() %>"></td>
 			<td><a href="hostView.district?houseAddress=<%=dto.getHouseAddress()%>"><%=dto.getHostingTitle()%></a></td>
+			<%=dto.getFileName() %>
 			<td><%=dto.getHouseAddress()%></td>
 		</tr>
 	</tbody>

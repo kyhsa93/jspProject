@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>GuestHouse</title>
-<link rel="stylesheet" type="text/css" href="https://bootswatch.com/cosmo/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://malsup.github.com/jquery.cycle2.js"></script> -->
 <style>

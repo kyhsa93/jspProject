@@ -3,7 +3,7 @@ package district.DTO;
 public class DistrictDTO {
 	private String villageName, hostingTitle, approve;
 	private String houseAddress, hostId, hostName, hostPhone;
-	private String bankAccount, introduction;
+	private String bankAccount, introduction, fileName;
 	
 	public String getVillageName() {
 		return villageName;
@@ -58,5 +58,12 @@ public class DistrictDTO {
 	}
 	public void setHouseAddress(String houseAddress) {
 		this.houseAddress = houseAddress;
+	}
+	public void setFileName(String fileName) {
+		// TODO Auto-generated method stub
+		this.fileName = fileName;
+	}
+	public String getFileName(){
+		return fileName;
 	}
 }

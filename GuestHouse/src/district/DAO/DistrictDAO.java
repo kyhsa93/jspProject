@@ -86,6 +86,7 @@ public class DistrictDAO {
 				dto.setHouseAddress(rs.getString("houseAddress"));
 				dto.setHostingTitle(rs.getString("hostingTitle"));
 				dto.setVillageName(rs.getString("villageName"));
+				dto.setFileName(rs.getString("fileName"));
 				if(dto.getApprove().equals("미승인"))
 					noApproveHostList.add(dto);
 			}
@@ -99,7 +100,7 @@ public class DistrictDAO {
 	public int addHost(DistrictDTO dto) {
 		// TODO Auto-generated method stub
 		int result = 0;
-		String sql = "insert into districtTable values(?, ?, ?, ?, ?, ?, ?, ?, '미승인')";
+		String sql = "insert into districtTable values(?, ?, ?, ?, ?, ?, ?, ?, ?, '미승인')";
 		try {
 			pstmt = connection.prepareStatement(sql);
 			
@@ -111,6 +112,7 @@ public class DistrictDAO {
 			pstmt.setString(6, dto.getVillageName());
 			pstmt.setString(7, dto.getBankAccount());
 			pstmt.setString(8, dto.getIntroduction());
+			pstmt.setString(9, dto.getFileName());
 			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
